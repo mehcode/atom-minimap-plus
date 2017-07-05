@@ -12,7 +12,7 @@ A preview of the full source code.
 ### Installation
 
 ```
-apm install minimap
+apm install minimap-plus
 ```
 
 ### Features
