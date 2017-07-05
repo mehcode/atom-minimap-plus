@@ -54,19 +54,19 @@ describe('MinimapElement', () => {
     waitsForPromise(() => atom.packages.activatePackage('minimap'))
 
     runs(() => {
-      atom.config.set('minimap.charHeight', 4)
-      atom.config.set('minimap.charWidth', 2)
-      atom.config.set('minimap.interline', 1)
-      atom.config.set('minimap.textOpacity', 1)
-      atom.config.set('minimap.autoToggle', true)
-      atom.config.set('minimap.displayMinimapOnLeft', false)
-      atom.config.set('minimap.displayCodeHighlights', false)
-      atom.config.set('minimap.displayPluginsControls', false)
-      atom.config.set('minimap.minimapScrollIndicator', false)
-      atom.config.set('minimap.adjustMinimapWidthToSoftWrap', false)
-      atom.config.set('minimap.smoothScrolling', true)
-      atom.config.set('minimap.adjustMinimapWidthOnlyIfSmaller', true)
-      atom.config.set('minimap.plugins', {})
+      atom.config.set('minimap-plus.charHeight', 4)
+      atom.config.set('minimap-plus.charWidth', 2)
+      atom.config.set('minimap-plus.interline', 1)
+      atom.config.set('minimap-plus.textOpacity', 1)
+      atom.config.set('minimap-plus.autoToggle', true)
+      atom.config.set('minimap-plus.displayMinimapOnLeft', false)
+      atom.config.set('minimap-plus.displayCodeHighlights', false)
+      atom.config.set('minimap-plus.displayPluginsControls', false)
+      atom.config.set('minimap-plus.minimapScrollIndicator', false)
+      atom.config.set('minimap-plus.adjustMinimapWidthToSoftWrap', false)
+      atom.config.set('minimap-plus.smoothScrolling', true)
+      atom.config.set('minimap-plus.adjustMinimapWidthOnlyIfSmaller', true)
+      atom.config.set('minimap-plus.plugins', {})
 
       editor = atom.workspace.buildTextEditor({})
       editor.autoHeight = false
@@ -313,7 +313,7 @@ describe('MinimapElement', () => {
       })
 
       it('renders the decorations based on the order settings', () => {
-        atom.config.set('minimap.displayPluginsControls', true)
+        atom.config.set('minimap-plus.displayPluginsControls', true)
 
         const pluginFoo = createPlugin()
         const pluginBar = createPlugin()
@@ -321,7 +321,7 @@ describe('MinimapElement', () => {
         Main.registerPlugin('foo', pluginFoo)
         Main.registerPlugin('bar', pluginBar)
 
-        atom.config.set('minimap.plugins.fooDecorationsZIndex', 1)
+        atom.config.set('minimap-plus.plugins.fooDecorationsZIndex', 1)
 
         const calls = []
         spyOn(minimapElement, 'drawLineDecoration').andCallFake((d) => {
@@ -344,7 +344,7 @@ describe('MinimapElement', () => {
 
           expect(calls).toEqual(['bar', 'foo'])
 
-          atom.config.set('minimap.plugins.fooDecorationsZIndex', -1)
+          atom.config.set('minimap-plus.plugins.fooDecorationsZIndex', -1)
 
           calls.length = 0
         })
@@ -650,8 +650,8 @@ describe('MinimapElement', () => {
           let previousScrollTop
 
           beforeEach(() => {
-            atom.config.set('minimap.independentMinimapScroll', true)
-            atom.config.set('minimap.scrollSensitivity', 0.5)
+            atom.config.set('minimap-plus.independentMinimapScroll', true)
+            atom.config.set('minimap-plus.scrollSensitivity', 0.5)
 
             spyOn(editorElement.component.presenter, 'setScrollTop').andCallFake(() => {})
 
@@ -781,7 +781,7 @@ describe('MinimapElement', () => {
           })
           spyOn(minimapElement, 'requestUpdate').andCallFake(() => {})
 
-          atom.config.set('minimap.scrollAnimation', false)
+          atom.config.set('minimap-plus.scrollAnimation', false)
 
           canvas = minimapElement.getFrontCanvas()
         })
@@ -794,7 +794,7 @@ describe('MinimapElement', () => {
         describe('when independentMinimapScroll setting is enabled', () => {
           beforeEach(() => {
             minimap.setScrollTop(1000)
-            atom.config.set('minimap.independentMinimapScroll', true)
+            atom.config.set('minimap-plus.independentMinimapScroll', true)
           })
 
           it('scrolls the editor to the line below the mouse', () => {
@@ -805,7 +805,7 @@ describe('MinimapElement', () => {
 
         describe('when moveCursorOnMinimapClick is true', () => {
           beforeEach(() => {
-            atom.config.set('minimap.moveCursorOnMinimapClick', true)
+            atom.config.set('minimap-plus.moveCursorOnMinimapClick', true)
           })
 
           it('moves the cursor to the corresponding line', () => {
@@ -827,8 +827,8 @@ describe('MinimapElement', () => {
           })
           spyOn(minimapElement, 'requestUpdate').andCallFake(() => {})
 
-          atom.config.set('minimap.scrollAnimation', true)
-          atom.config.set('minimap.scrollAnimationDuration', 300)
+          atom.config.set('minimap-plus.scrollAnimation', true)
+          atom.config.set('minimap-plus.scrollAnimationDuration', 300)
 
           canvas = minimapElement.getFrontCanvas()
         })
@@ -863,7 +863,7 @@ describe('MinimapElement', () => {
         describe('when independentMinimapScroll setting is enabled', () => {
           beforeEach(() => {
             minimap.setScrollTop(1000)
-            atom.config.set('minimap.independentMinimapScroll', true)
+            atom.config.set('minimap-plus.independentMinimapScroll', true)
           })
 
           it('scrolls the editor gradually to the line below the mouse', () => {
@@ -1093,7 +1093,7 @@ describe('MinimapElement', () => {
       })
 
       it('removes the quick settings button', () => {
-        atom.config.set('minimap.displayPluginsControls', true)
+        atom.config.set('minimap-plus.displayPluginsControls', true)
 
         waitsFor('a new animation frame request', () => {
           return nextAnimationFrame !== noAnimationFrame
@@ -1113,7 +1113,7 @@ describe('MinimapElement', () => {
         })
         runs(() => {
           nextAnimationFrame()
-          atom.config.set('minimap.minimapScrollIndicator', true)
+          atom.config.set('minimap-plus.minimapScrollIndicator', true)
         })
 
         waitsFor('minimap frame requested', () => {
@@ -1137,7 +1137,7 @@ describe('MinimapElement', () => {
           })
           spyOn(minimapElement, 'requestUpdate').andCallFake(() => {})
 
-          atom.config.set('minimap.scrollAnimation', false)
+          atom.config.set('minimap-plus.scrollAnimation', false)
 
           canvas = minimapElement.getFrontCanvas()
           mousedown(canvas)
@@ -1150,8 +1150,8 @@ describe('MinimapElement', () => {
 
       describe('and is changed to be a classical minimap again', () => {
         beforeEach(() => {
-          atom.config.set('minimap.displayPluginsControls', true)
-          atom.config.set('minimap.minimapScrollIndicator', true)
+          atom.config.set('minimap-plus.displayPluginsControls', true)
+          atom.config.set('minimap-plus.minimapScrollIndicator', true)
 
           minimap.setStandAlone(false)
         })
@@ -1228,7 +1228,7 @@ describe('MinimapElement', () => {
     describe('when minimap.textOpacity is changed', () => {
       beforeEach(() => {
         spyOn(minimapElement, 'requestForcedUpdate').andCallThrough()
-        atom.config.set('minimap.textOpacity', 0.3)
+        atom.config.set('minimap-plus.textOpacity', 0.3)
 
         waitsFor('minimap frame requested', () => {
           return minimapElement.frameRequested
@@ -1247,7 +1247,7 @@ describe('MinimapElement', () => {
 
         waitsFor('minimap attached', () => minimapElement.attached)
 
-        runs(() => { atom.config.set('minimap.displayCodeHighlights', true) })
+        runs(() => { atom.config.set('minimap-plus.displayCodeHighlights', true) })
 
         waitsFor('minimap frame requested', () => minimapElement.frameRequested)
 
@@ -1262,7 +1262,7 @@ describe('MinimapElement', () => {
     describe('when minimap.charWidth is changed', () => {
       beforeEach(() => {
         spyOn(minimapElement, 'requestForcedUpdate').andCallThrough()
-        atom.config.set('minimap.charWidth', 1)
+        atom.config.set('minimap-plus.charWidth', 1)
 
         waitsFor('minimap frame requested', () => {
           return minimapElement.frameRequested
@@ -1278,7 +1278,7 @@ describe('MinimapElement', () => {
     describe('when minimap.charHeight is changed', () => {
       beforeEach(() => {
         spyOn(minimapElement, 'requestForcedUpdate').andCallThrough()
-        atom.config.set('minimap.charHeight', 1)
+        atom.config.set('minimap-plus.charHeight', 1)
 
         waitsFor('minimap frame requested', () => {
           return minimapElement.frameRequested
@@ -1294,7 +1294,7 @@ describe('MinimapElement', () => {
     describe('when minimap.interline is changed', () => {
       beforeEach(() => {
         spyOn(minimapElement, 'requestForcedUpdate').andCallThrough()
-        atom.config.set('minimap.interline', 2)
+        atom.config.set('minimap-plus.interline', 2)
 
         waitsFor('minimap frame requested', () => {
           return minimapElement.frameRequested
@@ -1309,12 +1309,12 @@ describe('MinimapElement', () => {
 
     describe('when minimap.displayMinimapOnLeft setting is true', () => {
       it('moves the attached minimap to the left', () => {
-        atom.config.set('minimap.displayMinimapOnLeft', true)
+        atom.config.set('minimap-plus.displayMinimapOnLeft', true)
         expect(minimapElement.classList.contains('left')).toBeTruthy()
       })
 
       it('creates a style node with an offset for atom overlays', () => {
-        atom.config.set('minimap.displayMinimapOnLeft', true)
+        atom.config.set('minimap-plus.displayMinimapOnLeft', true)
 
         const node = document.querySelector('style[context="atom-text-editor-minimap"]')
         expect(node).toExist()
@@ -1322,8 +1322,8 @@ describe('MinimapElement', () => {
 
       describe('and then toggled off', () => {
         it('removes the overlays style node', () => {
-          atom.config.set('minimap.displayMinimapOnLeft', true)
-          atom.config.set('minimap.displayMinimapOnLeft', false)
+          atom.config.set('minimap-plus.displayMinimapOnLeft', true)
+          atom.config.set('minimap-plus.displayMinimapOnLeft', false)
 
           expect(document.querySelector('style[context="atom-text-editor-minimap"]')).not.toExist()
         })
@@ -1342,7 +1342,7 @@ describe('MinimapElement', () => {
 
           jasmineContent.insertBefore(editorElement, jasmineContent.firstChild)
 
-          atom.config.set('minimap.displayMinimapOnLeft', true)
+          atom.config.set('minimap-plus.displayMinimapOnLeft', true)
           minimapElement.attach()
         })
 
@@ -1358,7 +1358,7 @@ describe('MinimapElement', () => {
         atom.config.set('editor.softWrapAtPreferredLineLength', true)
         atom.config.set('editor.preferredLineLength', 2)
 
-        atom.config.set('minimap.adjustMinimapWidthToSoftWrap', true)
+        atom.config.set('minimap-plus.adjustMinimapWidthToSoftWrap', true)
 
         waitsFor('minimap frame requested', () => {
           return minimapElement.frameRequested
@@ -1423,7 +1423,7 @@ describe('MinimapElement', () => {
           })
           runs(() => {
             nextAnimationFrame()
-            atom.config.set('minimap.minimapScrollIndicator', true)
+            atom.config.set('minimap-plus.minimapScrollIndicator', true)
           })
 
           waitsFor('minimap frame requested', () => {
@@ -1440,7 +1440,7 @@ describe('MinimapElement', () => {
 
       describe('and when minimap.displayPluginsControls setting is true', () => {
         beforeEach(() => {
-          atom.config.set('minimap.displayPluginsControls', true)
+          atom.config.set('minimap-plus.displayPluginsControls', true)
         })
 
         it('offsets the scroll indicator by the difference', () => {
@@ -1451,7 +1451,7 @@ describe('MinimapElement', () => {
 
       describe('and then disabled', () => {
         beforeEach(() => {
-          atom.config.set('minimap.adjustMinimapWidthToSoftWrap', false)
+          atom.config.set('minimap-plus.adjustMinimapWidthToSoftWrap', false)
 
           waitsFor('minimap frame requested', () => {
             return minimapElement.frameRequested
@@ -1484,7 +1484,7 @@ describe('MinimapElement', () => {
       describe('when adjustMinimapWidthOnlyIfSmaller is disabled', () => {
         describe('and when preferredLineLength >= 16384', () => {
           beforeEach(() => {
-            atom.config.set('minimap.adjustMinimapWidthOnlyIfSmaller', false)
+            atom.config.set('minimap-plus.adjustMinimapWidthOnlyIfSmaller', false)
             atom.config.set('editor.preferredLineLength', 16384)
 
             waitsFor('minimap frame requested', () => {
@@ -1511,7 +1511,7 @@ describe('MinimapElement', () => {
         })
         runs(() => { nextAnimationFrame() })
 
-        atom.config.set('minimap.minimapScrollIndicator', true)
+        atom.config.set('minimap-plus.minimapScrollIndicator', true)
       })
 
       it('adds a scroll indicator in the element', () => {
@@ -1520,7 +1520,7 @@ describe('MinimapElement', () => {
 
       describe('and then deactivated', () => {
         it('removes the scroll indicator from the element', () => {
-          atom.config.set('minimap.minimapScrollIndicator', false)
+          atom.config.set('minimap-plus.minimapScrollIndicator', false)
           expect(minimapElement.querySelector('.minimap-scroll-indicator')).not.toExist()
         })
       })
@@ -1585,7 +1585,7 @@ describe('MinimapElement', () => {
 
     describe('when minimap.absoluteMode setting is true', () => {
       beforeEach(() => {
-        atom.config.set('minimap.absoluteMode', true)
+        atom.config.set('minimap-plus.absoluteMode', true)
       })
 
       it('adds a absolute class to the minimap element', () => {
@@ -1594,7 +1594,7 @@ describe('MinimapElement', () => {
 
       describe('when minimap.displayMinimapOnLeft setting is true', () => {
         it('also adds a left class to the minimap element', () => {
-          atom.config.set('minimap.displayMinimapOnLeft', true)
+          atom.config.set('minimap-plus.displayMinimapOnLeft', true)
           expect(minimapElement.classList.contains('absolute')).toBeTruthy()
           expect(minimapElement.classList.contains('left')).toBeTruthy()
         })
@@ -1602,7 +1602,7 @@ describe('MinimapElement', () => {
 
       describe('when minimap.adjustAbsoluteModeHeight setting is true', () => {
         beforeEach(() => {
-          atom.config.set('minimap.adjustAbsoluteModeHeight', true)
+          atom.config.set('minimap-plus.adjustAbsoluteModeHeight', true)
         })
         describe('when the content of the minimap is smaller that the editor height', () => {
           beforeEach(() => {
@@ -1641,7 +1641,7 @@ describe('MinimapElement', () => {
 
     describe('when the smoothScrolling setting is disabled', () => {
       beforeEach(() => {
-        atom.config.set('minimap.smoothScrolling', false)
+        atom.config.set('minimap-plus.smoothScrolling', false)
       })
       it('does not offset the canvas when the scroll does not match line height', () => {
         editorElement.setScrollTop(1004)
@@ -1676,7 +1676,7 @@ describe('MinimapElement', () => {
     describe('when minimap.displayPluginsControls setting is true', () => {
       let [openQuickSettings, quickSettingsElement, workspaceElement] = []
       beforeEach(() => {
-        atom.config.set('minimap.displayPluginsControls', true)
+        atom.config.set('minimap-plus.displayPluginsControls', true)
       })
 
       it('has a div to open the quick settings', () => {
@@ -1714,7 +1714,7 @@ describe('MinimapElement', () => {
       describe('when the displayMinimapOnLeft setting is enabled', () => {
         describe('clicking on the div', () => {
           beforeEach(() => {
-            atom.config.set('minimap.displayMinimapOnLeft', true)
+            atom.config.set('minimap-plus.displayMinimapOnLeft', true)
 
             workspaceElement = atom.views.getView(atom.workspace)
             jasmineContent.appendChild(workspaceElement)
@@ -1745,7 +1745,7 @@ describe('MinimapElement', () => {
           atom.config.set('editor.softWrapAtPreferredLineLength', true)
           atom.config.set('editor.preferredLineLength', 2)
 
-          atom.config.set('minimap.adjustMinimapWidthToSoftWrap', true)
+          atom.config.set('minimap-plus.adjustMinimapWidthToSoftWrap', true)
           nextAnimationFrame()
 
           controls = minimapElement.querySelector('.minimap-controls')
@@ -1776,7 +1776,7 @@ describe('MinimapElement', () => {
 
         describe('when the displayMinimapOnLeft setting is enabled', () => {
           beforeEach(() => {
-            atom.config.set('minimap.displayMinimapOnLeft', true)
+            atom.config.set('minimap-plus.displayMinimapOnLeft', true)
           })
 
           it('adjusts the size of the control div to fit in the minimap', () => {
@@ -1852,7 +1852,7 @@ describe('MinimapElement', () => {
           })
 
           it('toggles the absolute-mode setting', () => {
-            expect(atom.config.get('minimap.absoluteMode')).toBeTruthy()
+            expect(atom.config.get('minimap-plus.absoluteMode')).toBeTruthy()
             expect(minimapElement.absoluteMode).toBeTruthy()
           })
         })
@@ -1864,7 +1864,7 @@ describe('MinimapElement', () => {
           })
 
           it('toggles the displayMinimapOnLeft setting', () => {
-            expect(atom.config.get('minimap.displayMinimapOnLeft')).toBeTruthy()
+            expect(atom.config.get('minimap-plus.displayMinimapOnLeft')).toBeTruthy()
           })
 
           it('changes the buttons activation state', () => {
@@ -1879,7 +1879,7 @@ describe('MinimapElement', () => {
           })
 
           it('toggles the displayMinimapOnLeft setting', () => {
-            expect(atom.config.get('minimap.displayMinimapOnLeft')).toBeTruthy()
+            expect(atom.config.get('minimap-plus.displayMinimapOnLeft')).toBeTruthy()
           })
 
           it('changes the buttons activation state', () => {
@@ -1890,12 +1890,12 @@ describe('MinimapElement', () => {
 
         describe('core:move-right when the minimap is on the right', () => {
           beforeEach(() => {
-            atom.config.set('minimap.displayMinimapOnLeft', true)
+            atom.config.set('minimap-plus.displayMinimapOnLeft', true)
             atom.commands.dispatch(quickSettingsElement, 'core:move-right')
           })
 
           it('toggles the displayMinimapOnLeft setting', () => {
-            expect(atom.config.get('minimap.displayMinimapOnLeft')).toBeFalsy()
+            expect(atom.config.get('minimap-plus.displayMinimapOnLeft')).toBeFalsy()
           })
 
           it('changes the buttons activation state', () => {
@@ -1931,7 +1931,7 @@ describe('MinimapElement', () => {
 
       describe('then disabling it', () => {
         beforeEach(() => {
-          atom.config.set('minimap.displayPluginsControls', false)
+          atom.config.set('minimap-plus.displayPluginsControls', false)
         })
 
         it('removes the div', () => {
@@ -2016,7 +2016,7 @@ describe('MinimapElement', () => {
           describe('on the absolute mode item', () => {
             let [initial] = []
             beforeEach(() => {
-              initial = atom.config.get('minimap.absoluteMode')
+              initial = atom.config.get('minimap-plus.absoluteMode')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
@@ -2024,14 +2024,14 @@ describe('MinimapElement', () => {
             })
 
             it('toggles the code highlights on the minimap element', () => {
-              expect(atom.config.get('minimap.absoluteMode')).toEqual(!initial)
+              expect(atom.config.get('minimap-plus.absoluteMode')).toEqual(!initial)
             })
           })
 
           describe('on the adjust absolute mode height item', () => {
             let [initial] = []
             beforeEach(() => {
-              initial = atom.config.get('minimap.adjustAbsoluteModeHeight')
+              initial = atom.config.get('minimap-plus.adjustAbsoluteModeHeight')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
               atom.commands.dispatch(quickSettingsElement, 'core:move-down')
@@ -2040,7 +2040,7 @@ describe('MinimapElement', () => {
             })
 
             it('toggles the code highlights on the minimap element', () => {
-              expect(atom.config.get('minimap.adjustAbsoluteModeHeight')).toEqual(!initial)
+              expect(atom.config.get('minimap-plus.adjustAbsoluteModeHeight')).toEqual(!initial)
             })
           })
         })

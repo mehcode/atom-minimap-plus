@@ -198,10 +198,10 @@ The Minimap package doesn't provide any default keybindings. But you can define 
 
 ```coffee
 'atom-workspace':
-  'cmd-m': 'minimap:toggle'
-  'ctrl-alt-cmd-j': 'minimap:generate-javascript-plugin'
-  'ctrl-alt-cmd-b': 'minimap:generate-babel-plugin'
-  'ctrl-alt-cmd-c': 'minimap:generate-coffee-plugin'
+  'cmd-m': 'minimap-plus:toggle'
+  'ctrl-alt-cmd-j': 'minimap-plus:generate-javascript-plugin'
+  'ctrl-alt-cmd-b': 'minimap-plus:generate-babel-plugin'
+  'ctrl-alt-cmd-c': 'minimap-plus:generate-coffee-plugin'
 ```
 
 ### Tweaking The Minimap
