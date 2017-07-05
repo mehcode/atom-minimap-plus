@@ -1,3 +1,10 @@
+<a name="v4.29.1"></a>
+# v4.29.1 (2017-07-05)
+
+## :bug: Bug Fixes
+
+- Fix operation due to incomplete rename
+
 <a name="v4.29.0"></a>
 # v4.29.0 (2017-07-05)
 
