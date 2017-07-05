@@ -1,3 +1,10 @@
+<a name="v4.29.0"></a>
+# v4.29.0 (2017-07-05)
+
+## :bug: Bug Fixes
+
+- Revert "Kite promotion"
+
 <a name="v4.28.2"></a>
 # v4.28.2 (2017-05-02)
 
