@@ -1,5 +1,5 @@
 {
-  "name": "minimap",
+  "name": "minimap-plus",
   "main": "./lib/main",
   "version": "4.28.2",
   "private": true,
@@ -23,7 +23,7 @@
       "email": "cedric.nehemie@gmail.com"
     }
   ],
-  "repository": "https://github.com/atom-minimap/minimap",
+  "repository": "https://github.com/mehcode/atom-minimap-plus",
   "license": "MIT",
   "engines": {
     "atom": ">=1.13.0"
