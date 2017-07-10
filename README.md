@@ -4,9 +4,10 @@
 
 # Minimap package
 
-A preview of the full source code.
+A preview of the full source code without ads.
+Fork of [minimap](https://github.com/atom-minimap/minimap) due to [this controversy](https://github.com/atom-minimap/minimap/issues/588)
 
-![Minimap Screenshot](https://github.com/atom-minimap/minimap/blob/master/resources/screenshot.png?raw=true)
+![Minimap Screenshot](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/screenshot.png?raw=true)
 <small>In the screenshot above the minimap-git-diff and minimap-highlight-selected plugins are activated.</small>
 
 ### Installation
@@ -60,7 +61,7 @@ If checked the code will be highlighted using the grammar tokens. `(default=true
 
 `true`|`false`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/with-code-highlights.png?raw=true)| ![](https://github.com/atom-minimap/minimap/blob/master/resources/without-code-highlights.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/with-code-highlights.png?raw=true)| ![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/without-code-highlights.png?raw=true)
 
 #### Display Minimap On Left
 
@@ -68,7 +69,7 @@ If checked the Minimap appears on the left side of editors, otherwise it appears
 
 `true`|`false`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/minimap-on-left.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/minimap-on-right.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/minimap-on-left.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/minimap-on-right.png?raw=true)
 
 #### Char Height
 
@@ -76,7 +77,7 @@ The height of a character in the Minimap in pixels. `(default=2)`
 
 `1px`|`2px`|`4px`
 ---|---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/1px-char-height.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/2px-char-height.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/4px-char-height.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/1px-char-height.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/2px-char-height.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/4px-char-height.png?raw=true)
 
 #### Char Width
 
@@ -84,7 +85,7 @@ The width of a character in the Minimap in pixels. `(default=1)`
 
 `1px`|`2px`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/1px-char-width.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/2px-char-width.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/1px-char-width.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/2px-char-width.png?raw=true)
 
 #### Interline
 
@@ -92,7 +93,7 @@ The space between lines in the Minimap in pixels. `(default=1)`
 
 `1px`|`2px`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/1px-interline.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/2px-interline.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/1px-interline.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/2px-interline.png?raw=true)
 
 #### Text Opacity
 
@@ -100,7 +101,7 @@ The opacity used to render the line text in the Minimap. `(default=0.6)`
 
 `0.6`|`1`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/text-opacity-default.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/text-opacity-1.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/text-opacity-default.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/text-opacity-1.png?raw=true)
 
 #### Ignore Whitespaces In Tokens
 
@@ -108,7 +109,7 @@ When enabled, text editor tokens are rendered as plain blocks, with no regards t
 
 `false`|`true`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/with-whitespaces.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/without-whitespaces.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/with-whitespaces.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/without-whitespaces.png?raw=true)
 
 ### Display Plugins Controls
 
@@ -116,13 +117,13 @@ If checked, the Minimap plugins can be activated/deactivated from the Minimap se
 
 **You need to restart Atom for this setting to be effective.**
 
-![](https://github.com/atom-minimap/minimap/blob/master/resources/plugins-control.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/plugins-control.png?raw=true)
 
 #### Minimap Scroll Indicator
 
 Toggles the display of a side line showing which part of the buffer is currently displayed by the Minimap. The side line appear only if the Minimap height is bigger than the editor view height. `(default=true)`
 
-![](https://github.com/atom-minimap/minimap/blob/master/resources/scroll-indicator.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/scroll-indicator.png?raw=true)
 
 #### Plugins *
 
@@ -144,7 +145,7 @@ Whether to offset the minimap canvas when scrolling to keep the scroll smooth. W
 
 `true`|`false`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/smooth-scroll.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/no-smooth-scroll.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/smooth-scroll.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/no-smooth-scroll.png?raw=true)
 
 #### Scroll Animation
 
@@ -158,7 +159,7 @@ Duration of the scroll animation when clicking on the Minimap. `(default=300)`
 
 When enabled, using the mouse wheel over the Minimap will make it scroll independently of the text editor. The Minimap will still sync with the editor whenever the editor is scrolled, but it will no longer relay the mouse wheel events to the editor. `(default=false)`
 
-![](https://github.com/atom-minimap/minimap/blob/master/resources/independent-scroll.gif?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/independent-scroll.gif?raw=true)
 
 #### Scroll Sensitivity
 
@@ -184,7 +185,7 @@ Note that this setting will do nothing if `Display Minimap On Left` is also enab
 
 `false`|`true`
 ---|---
-![](https://github.com/atom-minimap/minimap/blob/master/resources/normal-mode.png?raw=true)|![](https://github.com/atom-minimap/minimap/blob/master/resources/absolute-mode.png?raw=true)
+![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/normal-mode.png?raw=true)|![](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/absolute-mode.png?raw=true)
 
 #### Adjust Absolute Mode Height
 
@@ -219,7 +220,7 @@ atom-text-editor[with-minimap] .vertical-scrollbar {
 
 #### Changing the Minimap's background
 
-![minimap-custom-background](https://github.com/atom-minimap/minimap/blob/master/resources/minimap-custom-background.png?raw=true)
+![minimap-custom-background](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/minimap-custom-background.png?raw=true)
 
 ```css
 atom-text-editor atom-text-editor-minimap {
@@ -229,7 +230,7 @@ atom-text-editor atom-text-editor-minimap {
 
 #### Changing the color of the Minimap's `visible-area`
 
-![minimap-custom-background](https://github.com/atom-minimap/minimap/blob/master/resources/minimap-custom-visible-area.png?raw=true)
+![minimap-custom-background](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/minimap-custom-visible-area.png?raw=true)
 
 ```css
 atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
@@ -239,7 +240,7 @@ atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
 
 #### Changing the color of the Minimap's `scroll-indicator`
 
-![minimap-custom-background](https://github.com/atom-minimap/minimap/blob/master/resources/minimap-custom-scroll-indicator.png?raw=true)
+![minimap-custom-background](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/minimap-custom-scroll-indicator.png?raw=true)
 
 ```css
 atom-text-editor atom-text-editor-minimap .minimap-scroll-indicator {
@@ -346,7 +347,7 @@ html {
 
 One neat trick is to use ASCII art to create huge comments visible in the minimap. This is really efficient when navigating huge files.
 
-![ASCII Art Comments](https://github.com/atom-minimap/minimap/blob/master/resources/ascii-comments.png?raw=true)
+![ASCII Art Comments](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/ascii-comments.png?raw=true)
 
 To generate these comments you can use on these useful Atom packages:
 
