@@ -5,7 +5,8 @@
 # Minimap package
 
 A preview of the full source code without ads.
-Fork of [minimap](https://github.com/atom-minimap/minimap) due to [this controversy](https://github.com/atom-minimap/minimap/issues/588)
+
+Minimap Plus is a fork of [minimap](https://github.com/atom-minimap/minimap) due to [this controversy](https://github.com/atom-minimap/minimap/issues/588). Presently the source is similar with [the Kite integration](https://github.com/mehcode/atom-minimap-plus/commit/e121ff3ff8c4fb8669e2080bc1268d43f4c8af16) removed and [an additional bug fix](https://github.com/mehcode/atom-minimap-plus/commit/3f3370ababf8b05e499be5397a329a783d6636ed).
 
 ![Minimap Screenshot](https://github.com/mehcode/atom-minimap-plus/blob/master/resources/screenshot.png?raw=true)
 <small>In the screenshot above the minimap-git-diff and minimap-highlight-selected plugins are activated.</small>
