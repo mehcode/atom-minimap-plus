@@ -3,7 +3,7 @@
   "main": "./lib/main",
   "version": "4.29.2",
   "private": true,
-  "description": "A preview of the full source code without ads.",
+  "description": "A preview of the full source code.",
   "author": "Fangdun Cai <cfddream@gmail.com>",
   "keywords": [
     "minimap",
