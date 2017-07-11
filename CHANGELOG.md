@@ -1,4 +1,10 @@
 <a name="v4.29.1"></a>
+# v4.29.2 (2017-07-05)
+
+## :bug: Bug Fixes
+
+- Fix propagation of onMouseWheel [#2](https://github.com/mehcode/atom-minimap-plus/issues/2)
+
 # v4.29.1 (2017-07-05)
 
 ## :bug: Bug Fixes
@@ -11,6 +17,7 @@
 ## :bug: Bug Fixes
 
 - Revert "Kite promotion"
+- Rename to `minimap-plus`
 
 <a name="v4.28.2"></a>
 # v4.28.2 (2017-05-02)
