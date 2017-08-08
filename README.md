@@ -1,3 +1,10 @@
+# Deprecated 
+## This package has been deprecated, as development has moved back to the original per resolution of [#588](https://github.com/atom-minimap/minimap/issues/588).
+
+Furthermore, I, [@mehcode](https://github.com/mehcode/), am now a collaborator there and have pledged to prevent future issues from arising.
+
+---
+
 [![Build Status](https://travis-ci.org/atom-minimap/minimap.svg?branch=master)](https://travis-ci.org/atom-minimap/minimap)
 [![APM Version](https://img.shields.io/apm/v/minimap-plus.svg)](https://atom.io/packages/minimap-plus)
 [![APM Downloads](https://img.shields.io/apm/dm/minimap-plus.svg)](https://atom.io/packages/minimap-plus)
